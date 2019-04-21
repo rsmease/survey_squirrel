@@ -1,6 +1,10 @@
 class Api::UsersController < ApplicationController
+  def index
+    render status: 404
+  end
+
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
 
     if @user.save
       login(@user)
@@ -16,9 +20,13 @@ class Api::UsersController < ApplicationController
     render "api/users/show"
   end
 
+  def delete
+    render status: 404
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :bio, :profile_image_url)
+    params.require(:user).permit(:email, :password)
   end
 end
