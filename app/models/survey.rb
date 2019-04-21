@@ -4,14 +4,9 @@ class Survey < ApplicationRecord
   validates :question, presence: true
   after_initialize :format_question
 
-  belongs_to :surveyor,
-             class_name: 'User',
-             foreign_key: 'surveyor_id',
-             primary_key: 'id',
-             dependent: :destroy,
-             optional: true
+  belongs_to :surveyor, class_name: 'User', dependent: :destroy, optional: true
 
-  has_many :responses, optional: true
+  has_many :responses, class_name: 'SurveyResponse'
 
   private
 
