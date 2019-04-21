@@ -5,12 +5,11 @@ class Survey < ApplicationRecord
   belongs_to :surveyor,
     class_name: 'User',
     foreign_key: 'surveyor_id',
-    primary_key: 'id'
+    primary_key: 'id',
+    optional: true
 
   def format_question
-    if self.question.last != '?'
-      self.question += '?'
-    end
-    self.question = self.question.split(" ").map(&:capitalize).join(" ")
+    self.question.last == '?' || self.question += '?'
+    self.question = self.question.split(" ").map(&:downcase).map(&:capitalize).join(" ")
   end
 end
