@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resource :session, only: %i[new create destroy]
 
     resources :surveys, only: %i[index create show]
+    resources :survey_responses, only: %i[create]
   end
 end
