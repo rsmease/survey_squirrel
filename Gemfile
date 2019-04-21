@@ -44,6 +44,8 @@ group :development, :test do
   gem 'annotate'
   gem 'selenium-webdriver'
   gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'ffaker'
 end
 
 group :development do
