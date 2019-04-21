@@ -1,5 +1,6 @@
 class Api::SurveysController < ApplicationController
   def index
+    @surveys = Survey.all
     render 'api/surveys/index'
   end
 
