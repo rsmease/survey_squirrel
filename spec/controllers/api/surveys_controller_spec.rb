@@ -22,7 +22,19 @@ RSpec.describe Api::SurveysController, type: :controller do
       end
 
       it { should respond_with(422) }
-      it { should_not render_template('api/surveys/index') }
+      it { should_not render_template('api/surveys/show') }
+    end
+
+    context 'when a user creats a valid survey' do
+      before do
+        @user = create(:user)
+        post :create, params: {
+          survey: attributes_for(:survey, surveyor_id: @user.id)
+        }
+      end
+
+      it { should respond_with(200) }
+      it { should render_template('api/surveys/show') }
     end
   end
 end
