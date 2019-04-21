@@ -5,11 +5,8 @@ RSpec.describe User, type: :model do
     @user = create(:user)
   end
 
-  it "is valid with valid attributes" do
-    expect(@user).to be_valid
-  end
-
   it { is_expected.to validate_presence_of(:email) }
+  it { is_expected.to validate_length_of(:password) }
   it { is_expected.to validate_presence_of(:password_digest) }
   it { is_expected.to validate_presence_of(:session_token) }
 
