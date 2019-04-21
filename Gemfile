@@ -40,6 +40,7 @@ group :development, :test do
   gem 'capybara', '>= 2.15'
   gem 'better_errors'
   gem 'pry-rails'
+  gem 'rspec-rails'
   gem 'annotate'
   gem 'selenium-webdriver'
 end
