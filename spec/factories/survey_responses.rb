@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :survey_response do
     response { FFaker::Boolean.maybe }
-    survey { Survey.first || association(:survey) }
+    survey_id { Survey.first.id || association(:survey) }
   end
 end
