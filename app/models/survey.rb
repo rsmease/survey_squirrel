@@ -3,7 +3,7 @@ class Survey < ApplicationRecord
   after_initialize :format_question
 
   belongs_to :surveyor,
-    class_name: 'User'.
+    class_name: 'User',
     foreign_key: 'surveyor_id',
     primary_key: 'id'
 
