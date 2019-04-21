@@ -11,6 +11,8 @@ class Survey < ApplicationRecord
              dependent: :destroy,
              optional: true
 
+  has_many :responses, optional: true
+
   private
 
   def format_question
