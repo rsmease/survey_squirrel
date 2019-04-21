@@ -1,8 +1,4 @@
 class Api::UsersController < ApplicationController
-  def index
-    render status: 404
-  end
-
   def create
     @user = User.create(user_params)
 
@@ -18,10 +14,6 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     render "api/users/show"
-  end
-
-  def delete
-    render status: 404
   end
 
   private
