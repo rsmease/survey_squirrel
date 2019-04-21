@@ -1,12 +1,12 @@
 class Api::SurveyResponsesController < ApplicationController
   def create
-    @response = SurveyReponse.create(response_params)
+    @survey_response = SurveyResponse.create(survey_response_params)
 
-    if @response.save
-      @survey = Survey.find(response_params[:survey_id])
+    if @survey_response.save
+      @survey = Survey.find(survey_response_params[:survey_id])
       render 'api/surveys/show'
     else
-      render json: @response.errors.full_messages, status: 422
+      render json: @survey_response.errors.full_messages, status: 422
     end
   end
 
