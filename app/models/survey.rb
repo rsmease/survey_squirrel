@@ -1,10 +1,11 @@
 class Survey < ApplicationRecord
-  validate :question, presence: true
+  validates :question, presence: true
   after_initialize :format_question
 
   def format_question
-    if self.question.last !== '?'
+    if self.question.last != '?'
       self.question += '?'
     end
+    self.question = self.question.split(" ").map(&:capitalize).join(" ")
   end
 end
