@@ -21,6 +21,7 @@ class SurveyIndex extends React.Component {
   }
 
   componentWillMount() {
+    document.title = "Survey Squirrel - Home"
     this.props.requestAllSurveys();
   }
 
@@ -33,7 +34,7 @@ class SurveyIndex extends React.Component {
     return (
       <Container>
         <Row className={css(styles.row)}>
-          <img src={Logo}/>
+          <img src={Logo} />
         </Row>
         <Row className={css(styles.row)}>
           <Col xs='12'>

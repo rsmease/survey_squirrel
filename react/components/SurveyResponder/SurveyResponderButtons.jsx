@@ -8,7 +8,6 @@ class SurveyResponderButtons extends React.Component {
   }
 
   handleSubmit(responseBool) {
-    console.log("running")
     const { requestToCreateSurveyResponse, surveyID } = this.props;
     requestToCreateSurveyResponse({ survey_id: surveyID, response: responseBool });
   }

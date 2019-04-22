@@ -1,6 +1,8 @@
 import React from 'react';
-import { Col } from 'reactstrap';
+import { Col, Modal } from 'reactstrap';
 import { StyleSheet, css } from 'aphrodite';
+
+import SurveyResponder from '../SurveyResponder/container';
 
 const styles = StyleSheet.create({
   column: {
@@ -27,15 +29,30 @@ const styles = StyleSheet.create({
 class SurveyIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      modalIsOpen: false
+    }
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    const { modalIsOpen } = this.state;
+    this.setState({ modalIsOpen: !modalIsOpen })
   }
 
   render() {
     const { survey } = this.props;
+    const { modalIsOpen } = this.state;
 
     return (
-      <Col xs='12' md='3' className={css(styles.column)}>
-        <p className={css(styles.question)}>{survey.question}</p>
-      </Col>
+      <React.Fragment>
+        <Col xs='12' md='3' className={css(styles.column)} onClick={this.toggle}>
+          <p className={css(styles.question)}>{survey.question}</p>
+        </Col>
+        <Modal isOpen={modalIsOpen} toggle={this.toggle}>
+          <SurveyResponder survey={survey} toggle={this.toggle} />
+        </Modal>
+      </React.Fragment>
     );
   }
 }
