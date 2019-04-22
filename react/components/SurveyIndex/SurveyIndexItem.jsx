@@ -11,8 +11,7 @@ class SurveyIndexItem extends React.Component {
     return (
       <React.Fragment>
         <div>{survey.question}</div>
-        <div>{survey.responses.length}</div>
-        <SurveyResponder surveyID={survey.id} />
+        <SurveyResponder surveyID={survey.id} yesCount={survey.yes_count} noCount={survey.no_count} />
       </React.Fragment>
     );
   }
