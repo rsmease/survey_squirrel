@@ -3,6 +3,7 @@ import { Col, Modal } from 'reactstrap';
 import { StyleSheet, css } from 'aphrodite';
 
 import SurveyResponder from '../SurveyResponder/container';
+import SurveyResponseGraph from './SurveyResponseGraph';
 
 const styles = StyleSheet.create({
   column: {
@@ -48,6 +49,7 @@ class SurveyIndexItem extends React.Component {
       <React.Fragment>
         <Col xs='12' md='3' className={css(styles.column)} onClick={this.toggle}>
           <p className={css(styles.question)}>{survey.question}</p>
+          <SurveyResponseGraph yesCount={survey.yes_count} noCount={survey.no_count} />
         </Col>
         <Modal isOpen={modalIsOpen} toggle={this.toggle}>
           <SurveyResponder survey={survey} toggle={this.toggle} />
