@@ -20,14 +20,6 @@ Please use Rails to build a simple survey tool, with the following requirements:
 * Make sure all of your dependencies are listed in your Gemfile and instructions are provided for setup if needed.
 * You should use SQLite to persist your data.
 
-Please use Rails to build a simple survey tool, with the following requirements:
-* A user should be able to create any number of surveys
-* The home screen of your app should show a list of surveys and a button to create a new one
-* You don't need to worry about user authentication but you may stub this out if you wish
-* A user can respond to a survey by clicking into it from the list mentioned above
-* You should display the results of the survey on the home screen with the percentage of yes and no responses.
-* Make sure all of your dependencies are listed in your Gemfile and instructions are provided for setup if needed.
-
 ## Introductory Notes
 
 Survey Squirrel is a survey tool used to generate simple, single-question surveys with yes/no answers. You can boot the program locally by running the following commands from the main project directory:
