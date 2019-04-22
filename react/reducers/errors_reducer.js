@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 import {
   RECEIVE_SURVEY_ERRORS
-} from './actions/survey_actions';
+} from '../actions/survey_actions';
 
 export default (state = {}, action) => {
   Object.freeze(state);

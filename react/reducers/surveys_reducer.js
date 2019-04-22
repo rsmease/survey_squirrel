@@ -3,7 +3,7 @@ import _ from 'lodash';
 import {
   RECEIVE_SURVEY,
   RECEIVE_ALL_SURVEYS
-} from './actions/survey_actions';
+} from '../actions/survey_actions';
 
 export default (state = {}, action) => {
   Object.freeze(state);
