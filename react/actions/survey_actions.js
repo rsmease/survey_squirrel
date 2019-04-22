@@ -10,6 +10,7 @@ import {
 
 export const RECEIVE_SURVEY = 'RECEIVE_SURVEY';
 export const RECEIVE_ALL_SURVEYS = 'RECEIVE_ALL_SURVEYS';
+export const RECEIVE_SURVEY_ERRORS = 'RECEIVE_SURVEY_ERRORS';
 
 const receiveSurvey = (survey) => ({
   type: RECEIVE_SURVEY,
@@ -21,6 +22,11 @@ const receiveAllSurveys = (surveys) => ({
   surveys
 });
 
+const receiveSurveyErrors = (errors) => ({
+  type: RECEIVE_SURVEY_ERRORS,
+  errors
+})
+
 export const requestSurvey = (id) => (dispatch) =>
   fetchSurvey(id).then(fetchedSurvey =>
     dispatch(receiveSurvey(fetchedSurvey)));
@@ -30,7 +36,8 @@ export const requestAllSurveys = () => (dispatch) => fetchAllSurveys()
 
 export const createNewSurvey = (formSurvey) => (dispatch) =>
   postSurvey(formSurvey).then(createdSurvey =>
-    dispatch(receiveSurvey(createdSurvey)));
+    dispatch(receiveSurvey(createdSurvey)),
+    err => (dispatch(receiveSurveyErrors(err.responseJSON))));
 
 export const createNewSurveyResponse = (formSurveyResponse) => (dispatch) =>
   postSurveyResponse(formSurveyResponse).then(updatedSurvey =>
