@@ -22,7 +22,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "rspec",
+    "start_rails": "rails s",
+    "start_react": "webpack --watch"
   },
   "repository": {
     "type": "git",
