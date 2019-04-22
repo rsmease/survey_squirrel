@@ -2,46 +2,58 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    width: '90%'
+  },
   yesBar: {
-    height: 2,
-    color: '#4A572C'
+    height: 10,
+    backgroundColor: '#4A572C'
   },
   noBar: {
-    height: 2,
-    color: '#E34819'
+    height: 10,
+    backgroundColor: '#E34819'
   }
 })
 
-class SurveyReponseGraph extends React.Component {
+class SurveyResponseGraph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       yesPercent: 0,
-      noPercent: 0
+      noPercent: 0,
+      pastTotal: 0
     }
   }
 
+  componentWillMount() {
+    this.adjustBars();
+  }
+
   adjustBars() {
-    const { yesCount, noCount } = this.props;
-    const total = yesCount + noCount;
-    if (!total) {
+    const { yesCount, noCount, pastTotal } = this.props;
+    const currentTotal = yesCount + noCount;
+
+    if (!currentTotal || currentTotal === pastTotal) {
       return;
     }
+    const yesPercent = Math.floor((yesCount / currentTotal) * 100);
+    const noPercent = Math.floor((noCount / currentTotal) * 100);
 
-    const yesPercent = Math.floor((yesCount / total) * 100);
-    const noPercent = Math.floor((noCount / total) * 100);
-
-    this.setState({ yesPercent, noPercent })
+    this.setState({ yesPercent, noPercent, pastTotal: currentTotal })
   }
 
   render() {
     const { yesPercent, noPercent } = this.state;
-
     return (
-      <React.Component>
-        <div className={css(styles.yesBar)} styles={{ width: `${yesPercent}%` }}></div>
-        <div className={css(styles.noBar)} styles={{ width: `${noPercent}%` }}></div>
-      </React.Component>
+      <div className={css(styles.container)}>
+        <span className={css(styles.yesBar)} style={{ width: `${yesPercent}%` }}></span>
+        <span className={css(styles.noBar)} style={{ width: `${noPercent}%` }}></span>
+      </div>
     )
   }
 }
+
+export default SurveyResponseGraph;
