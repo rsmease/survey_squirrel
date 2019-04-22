@@ -22,7 +22,7 @@ class SurveyResponderForm extends React.Component {
       <React.Fragment>
         <ModalBody>
           <p>{survey.question}</p>
-          <SurveyResponderButtons yesCount={survey.yes_count} noCount={survey.no_count} requestToCreateSurveyResponse={requestToCreateSurveyResponse} />
+          <SurveyResponderButtons surveyID={survey.id} yesCount={survey.yes_count} noCount={survey.no_count} requestToCreateSurveyResponse={requestToCreateSurveyResponse} />
         </ModalBody>
       </React.Fragment>
     );

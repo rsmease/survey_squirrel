@@ -14,6 +14,7 @@ class SurveyResponderButtons extends React.Component {
 
   render() {
     const { yesCount, noCount } = this.props;
+    console.log(this.props);
     return (
       <React.Fragment>
         <Button color="primary" onClick={() => this.handleSubmit(true)}>Yes</Button>

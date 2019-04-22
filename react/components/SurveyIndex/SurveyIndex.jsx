@@ -9,6 +9,7 @@ import SurveyCreator from '../SurveyCreator/container';
 const styles = StyleSheet.create({
   row: {
     alignItems: 'center',
+    justifyContent: 'center',
     margin: '30px 0'
   },
   centeredText: {
