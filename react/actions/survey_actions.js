@@ -34,12 +34,12 @@ export const requestSurvey = (id) => (dispatch) =>
 export const requestAllSurveys = () => (dispatch) => fetchAllSurveys()
   .then(fetchedSurveys => dispatch(receiveAllSurveys(fetchedSurveys)));
 
-export const createNewSurvey = (formSurvey) => (dispatch) =>
+export const requestToCreateSurvey = (formSurvey) => (dispatch) =>
   postSurvey(formSurvey).then(createdSurvey =>
     dispatch(receiveSurvey(createdSurvey)),
     err => (dispatch(receiveSurveyErrors(err.responseJSON))));
 
-export const createNewSurveyResponse = (formSurveyResponse) => (dispatch) =>
+export const requestToCreateSurveyResponse = (formSurveyResponse) => (dispatch) =>
   postSurveyResponse(formSurveyResponse).then(updatedSurvey =>
     dispatch(receiveSurvey(updatedSurvey)));
 
