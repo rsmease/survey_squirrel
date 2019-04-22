@@ -1,8 +1,8 @@
-export const fetchSurvey = (surveyID) => (
+export const fetchSurvey = (id) => (
   $.ajax({
-    url: `api/surveys/${surveyID}`,
+    url: `api/surveys/${id}`,
     method: 'GET',
-    data: { surveyID }
+    data: { id }
   })
 );
 
