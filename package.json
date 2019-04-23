@@ -26,7 +26,11 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
   },
-  "description": "- Notes to add: - user model, controller - JSON namespacing - testing procedures",
+  "description": "A tool for making surveys",
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
@@ -36,7 +40,8 @@
   "scripts": {
     "test": "rspec",
     "start_rails": "rails s",
-    "start_react": "webpack --watch"
+    "start_react": "webpack --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
