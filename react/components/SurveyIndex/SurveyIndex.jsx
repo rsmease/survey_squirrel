@@ -38,7 +38,7 @@ class SurveyIndex extends React.Component {
     const { loading } = this.state;
 
     if (surveys && loading) {
-      setTimeout(() => this.setState({ loading: false }), 4000)
+      setTimeout(() => this.setState({ loading: false }), 2000)
     }
   }
 
