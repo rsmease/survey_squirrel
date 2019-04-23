@@ -32,13 +32,22 @@ class SurveyResponseGraph extends React.Component {
     this.adjustBars();
   }
 
+  componentDidUpdate() {
+    const { yesCount, noCount } = this.props;
+    const { pastTotal } = this.state;
+    if (yesCount + noCount !== pastTotal) {
+      this.adjustBars()
+    }
+  }
+
   adjustBars() {
     const { yesCount, noCount, pastTotal } = this.props;
     const currentTotal = yesCount + noCount;
 
-    if (!currentTotal || currentTotal === pastTotal) {
+    if (!currentTotal) {
       return;
     }
+
     const yesPercent = Math.floor((yesCount / currentTotal) * 100);
     const noPercent = Math.floor((noCount / currentTotal) * 100);
 
