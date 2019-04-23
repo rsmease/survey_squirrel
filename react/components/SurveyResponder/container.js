@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { requestToCreateSurveyResponse } from '../../actions/survey_actions';
 
 //components
-import SurveyResponderButtons from './SurveyResponderButtons';
+import SurveyResponderForm from './SurveyResponderForm';
 
 const mapStateToProps = () => { };
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter
-  (connect(mapStateToProps, mapDispatchToProps)(SurveyResponderButtons));
+  (connect(mapStateToProps, mapDispatchToProps)(SurveyResponderForm));
