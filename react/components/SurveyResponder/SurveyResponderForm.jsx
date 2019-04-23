@@ -1,6 +1,28 @@
 import React from 'react';
-import { ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
+import { css, StyleSheet } from 'aphrodite';
+import { ModalBody } from 'reactstrap';
+
 import SurveyResponderButtons from './SurveyResponderButtons';
+import SurveyResponseGraph from '../SurveyIndex/SurveyResponseGraph';
+
+const styles = StyleSheet.create({
+  modalBody: {
+    padding: 30,
+    minHeight: 200,
+    backgroundColor: '#DBA72E',
+    display: 'flex',
+    alignItems: 'center',
+    justifyItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  question: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginBottom: 0
+  }
+})
 
 class SurveyResponderForm extends React.Component {
   constructor(props) {
@@ -20,9 +42,10 @@ class SurveyResponderForm extends React.Component {
 
     return (
       <React.Fragment>
-        <ModalBody>
-          <p>{survey.question}</p>
+        <ModalBody className={css(styles.modalBody)}>
+          <p className={css(styles.question)}>{survey.question}</p>
           <SurveyResponderButtons surveyID={survey.id} yesCount={survey.yes_count} noCount={survey.no_count} requestToCreateSurveyResponse={requestToCreateSurveyResponse} />
+          <SurveyResponseGraph yesCount={survey.yes_count} noCount={survey.no_count} />
         </ModalBody>
       </React.Fragment>
     );

@@ -8,7 +8,7 @@ import SurveyResponseGraph from './SurveyResponseGraph';
 const styles = StyleSheet.create({
   column: {
     backgroundColor: '#DBA72E',
-    height: 200,
+    minHeight: 200,
     margin: 20,
     borderRadius: 6,
     display: 'flex',
@@ -52,7 +52,7 @@ class SurveyIndexItem extends React.Component {
           <p className={css(styles.question)}>{survey.question}</p>
           <SurveyResponseGraph yesCount={survey.yes_count} noCount={survey.no_count} />
         </Col>
-        <Modal isOpen={modalIsOpen} toggle={this.toggle}>
+        <Modal isOpen={modalIsOpen} toggle={this.toggle} centered>
           <SurveyResponder survey={survey} toggle={this.toggle} />
         </Modal>
       </React.Fragment>
