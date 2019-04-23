@@ -72,9 +72,6 @@ class SurveyIndex extends React.Component {
     return (
       <Container>
         <Row className={css(styles.row)}>
-          <img src={Logo} />
-        </Row>
-        <Row className={css(styles.row)}>
           <Col xs='12'>
             <h3 className={css(styles.centeredText)}>Welcome to Survey Squirrel</h3>
           </Col>
