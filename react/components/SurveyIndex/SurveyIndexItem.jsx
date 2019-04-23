@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   column: {
     minHeight: 200,
     margin: 20,
+    padding: 30,
     borderRadius: 6,
     display: 'flex',
     alignItems: 'center',
@@ -23,8 +24,7 @@ const styles = StyleSheet.create({
     }
   },
   question: {
-    textAlign: 'center',
-    color: 'rgba(0, 122, 255, 1)'
+    textAlign: 'center'
   }
 })
 class SurveyIndexItem extends React.Component {

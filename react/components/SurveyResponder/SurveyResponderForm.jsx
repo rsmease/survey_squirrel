@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
   modalBody: {
     padding: 30,
     minHeight: 200,
-    backgroundColor: '#DBA72E',
+    borderWidth: 0,
+    borderRadius: 6,
     display: 'flex',
     alignItems: 'center',
     justifyItems: 'center',
