@@ -78,6 +78,12 @@ The Redux store is designed to create a pure model for data flow from the backen
 
 The React components are structured in a  `container -> index -> indexItem`  nesting pattern. The main view of the app features the `SurveyIndex`, which includes all of the surveys available to visitors. Clicking on a survey lets you post SurveyResponse instances, and the results of the survey are updated automatically as you click the response buttons. The frontend is build using a Bootstrap grid and a few other core Bootstrap components.
 
+### Performance
+
+You should notice a loading animation show up the first time that you load the app. In order to simulate latency, I added a 4 second timeout to the initial load so that you can see what the loading screen would look like if you were somewhere that didn't have strong cell coverage. Without that timeout, the app would load instantly. At scale, we could speed up the app using these techniques:
+1. If a user is submitting a bunch of responses, collect them within the client and send them off as a batch request at certain intervals. We could still simulate the changes on the client by updating the yes/no count and the percentage bars.
+2. Find a more thoughtful way to track the count of yes and no responses to questions within the database. At the moment, I can calculating them live via Rails association every time I pull a survey out of the database, which would slow things down if there were millions of responses to count. That's fine for now, since we only make that call one time, but it's something to think about.
+
 ### Testing
 
 Current, there are no integration tests. If you would like me to add some, let me know. I would likely use Capybara, although I have also had great experience with new Cypress testing library. Here's an exmaple what I would test:
