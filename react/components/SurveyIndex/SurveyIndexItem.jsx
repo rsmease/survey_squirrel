@@ -7,6 +7,7 @@ import SurveyResponseGraph from './SurveyResponseGraph';
 
 const styles = StyleSheet.create({
   column: {
+    cursor: 'pointer',
     minHeight: 200,
     backgroundColor: 'rgba(255, 255, 255, 1)',
     margin: 20,

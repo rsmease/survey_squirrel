@@ -40,7 +40,12 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0, 122, 255, 1)',
     color: 'rgba(255, 255, 255, 1)',
     borderRadius: 22,
-    padding: '10px 30px'
+    padding: '10px 30px',
+    transition: 'all .2s',
+    ':focus': {
+      backgroundColor: 'rgba(0, 122, 255, 0.8)',
+      borderColor: 'rgba(0, 122, 255, 0.8)'
+    }
   }
 })
 

@@ -1,5 +1,5 @@
 {
-  "name": "SurveySquirrel",
+  "name": "survey_squirrel",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.4.3",
