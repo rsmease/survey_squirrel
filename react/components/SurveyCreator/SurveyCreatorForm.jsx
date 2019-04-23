@@ -1,6 +1,41 @@
 import React from 'react';
+import { css, StyleSheet } from 'aphrodite';
 import { ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import SurveyCreator from './SurveyCreatorButton';
+
+const styles = StyleSheet.create({
+  modalHeader: {
+    paddingTop: 30,
+    borderBottom: 'none'
+  },
+  modalFooter: {
+    borderTop: 'none',
+    display: 'flex',
+    justifyContent: 'center',
+    paddingBottom: 30
+  },
+  modalBody: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  input: {
+    borderStyle: 'solid',
+    padding: '10px 0 10px 10px',
+    width: '90%',
+    borderRadius: 6,
+    transition: 'all .2s',
+    ':focus': {
+      borderColor: '#C2C290',
+      outline: 'none'
+    }
+  },
+  button: {
+    backgroundColor: '#4A572C',
+    borderColor: '#4A572C',
+    borderRadius: 22,
+    padding: '10px 30px'
+  }
+})
 
 class SurveyCreatorForm extends React.Component {
   constructor(props) {
@@ -41,20 +76,18 @@ class SurveyCreatorForm extends React.Component {
 
     return (
       <React.Fragment>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle} className={css(styles.modalHeader)}>What would you like to ask?</ModalHeader>
         <ModalBody>
           <form>
-            <label>What would you like to ask?</label>
-            <textarea
-              type="textarea"
+            <input
+              className={css(styles.input)}
               value={this.state.question}
               onChange={this.handleInput('question')}
             />
           </form>
         </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={this.handleSubmit}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+        <ModalFooter className={css(styles.modalFooter)}>
+          <Button className={css(styles.button)} onClick={this.handleSubmit}>Do Something</Button>{' '}
         </ModalFooter>
       </React.Fragment>
     );

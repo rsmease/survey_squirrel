@@ -37,7 +37,7 @@ class SurveyCreator extends React.Component {
     return (
       <React.Fragment>
         <Button className={css(styles.button)} onClick={this.toggle}>Click Here To Create a New Survey</Button>
-        <Modal isOpen={modalIsOpen} toggle={this.toggle}>
+        <Modal isOpen={modalIsOpen} toggle={this.toggle} centered>
           <SurveyCreatorForm toggle={this.toggle} requestToCreateSurvey={requestToCreateSurvey} />
         </Modal>
       </React.Fragment>
