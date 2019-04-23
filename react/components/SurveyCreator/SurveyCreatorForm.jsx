@@ -95,7 +95,7 @@ class SurveyCreatorForm extends React.Component {
           </form>
         </ModalBody>
         <ModalFooter className={css(styles.modalFooter)}>
-          <Button className={css(styles.button)} onClick={this.handleSubmit}>Do Something</Button>{' '}
+          <Button className={css(styles.button)} onClick={this.handleSubmit}>Get Answers</Button>{' '}
         </ModalFooter>
       </React.Fragment>
     );

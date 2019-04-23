@@ -46,7 +46,14 @@ class SurveyResponseGraph extends React.Component {
   }
 
   render() {
-    const { yesPercent, noPercent } = this.state;
+    const { yesPercent, noPercent, pastTotal } = this.state;
+
+    if (!pastTotal) {
+      return (
+        <p>No responses yet.</p>
+      )
+    }
+
     return (
       <div className={css(styles.container)}>
         <span className={css(styles.yesBar)} style={{ width: `${yesPercent}%` }}></span>
