@@ -11,11 +11,7 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 22,
-    padding: '10px 30px',
-    transition: 'all .2s',
-    ':hover': {
-      transform: 'scale(1.05)'
-    }
+    padding: '10px 30px'
   },
   yesButton: {
     backgroundColor: 'rgba(76, 217, 100, 1)',
