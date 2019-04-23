@@ -5,8 +5,11 @@ import SurveyCreator from './SurveyCreatorButton';
 
 const styles = StyleSheet.create({
   modalHeader: {
-    paddingTop: 30,
+    paddingTop: 12,
     borderBottom: 'none'
+  },
+  title: {
+    marginTop: 18
   },
   modalFooter: {
     borderTop: 'none',
@@ -17,12 +20,14 @@ const styles = StyleSheet.create({
   modalBody: {
     display: 'flex',
     justifyContent: 'center',
+    paddingTop: 0
   },
   input: {
     borderStyle: 'solid',
-    padding: '10px 0 10px 10px',
-    width: '90%',
-    borderRadius: 6,
+    padding: '10px 0 10px 30px',
+    width: 400,
+    borderWidth: 1,
+    borderRadius: 22,
     transition: 'all .2s',
     ':focus': {
       borderColor: '#C2C290',
@@ -76,10 +81,13 @@ class SurveyCreatorForm extends React.Component {
 
     return (
       <React.Fragment>
-        <ModalHeader toggle={toggle} className={css(styles.modalHeader)}>What would you like to ask?</ModalHeader>
-        <ModalBody>
+        <ModalHeader toggle={toggle} className={css(styles.modalHeader)}>
+          <p className={css(styles.title)}>What would you like to ask?</p>
+        </ModalHeader>
+        <ModalBody className={css(styles.modalBody)}>
           <form>
             <input
+              maxLength={60}
               className={css(styles.input)}
               value={this.state.question}
               onChange={this.handleInput('question')}
