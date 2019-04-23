@@ -37,7 +37,6 @@ class SurveyIndex extends React.Component {
     const { surveys } = this.props;
     const { loading } = this.state;
 
-    console.log(surveys, loading)
     if (surveys && loading) {
       this.setState({ loading: false })
     }
