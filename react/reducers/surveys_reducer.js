@@ -15,8 +15,8 @@ export default (state = {}, action) => {
         [receivedSurvey.id]: receivedSurvey
       });
     case RECEIVE_ALL_SURVEYS:
-      const allSurveys = action.surveys;
-      return _.merge({}, state, allSurveys);
+      const allSurveys = action.surveys.map((survey) => ({ [survey.id]: survey }))
+      return _.merge({}, state, ...allSurveys);
     default:
       return state;
   }

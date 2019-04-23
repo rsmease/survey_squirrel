@@ -5,13 +5,14 @@ import SurveyCreatorForm from './SurveyCreatorForm';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#4A572C',
-    borderColor: '#4A572C',
+    backgroundColor: 'rgba(0, 122, 255, 1)',
+    borderColor: 'rgba(0, 122, 255, 1)',
     borderRadius: 22,
     padding: '10px 30px',
-    transition: 'all .2s',
-    ':hover': {
-      transform: 'scale(1.05)'
+    transition: 'all 0.2s',
+    ':focus': {
+      backgroundColor: 'rgba(0, 122, 255, 0.8)',
+      borderColor: 'rgba(0, 122, 255, 0.8)'
     }
   }
 })

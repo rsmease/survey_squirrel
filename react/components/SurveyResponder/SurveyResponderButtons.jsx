@@ -11,19 +11,15 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 22,
-    padding: '10px 30px',
-    transition: 'all .2s',
-    ':hover': {
-      transform: 'scale(1.05)'
-    }
+    padding: '10px 30px'
   },
   yesButton: {
-    backgroundColor: '#4A572C',
-    borderColor: '#4A572C'
+    backgroundColor: 'rgba(76, 217, 100, 1)',
+    borderColor: 'rgba(76, 217, 100, 1)'
   },
   noButton: {
-    backgroundColor: '#E34819',
-    borderColor: '#E34819'
+    backgroundColor: 'rgba(255, 59, 48, 1)',
+    borderColor: 'rgba(255, 59, 48, 1)'
   }
 });
 class SurveyResponderButtons extends React.Component {
@@ -39,7 +35,6 @@ class SurveyResponderButtons extends React.Component {
 
   render() {
     const { yesCount, noCount } = this.props;
-    console.log(this.props);
     return (
       <div className={css(styles.container)}>
         <Button

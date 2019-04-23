@@ -7,9 +7,11 @@ import SurveyResponseGraph from './SurveyResponseGraph';
 
 const styles = StyleSheet.create({
   column: {
-    backgroundColor: '#DBA72E',
+    cursor: 'pointer',
     minHeight: 200,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     margin: 20,
+    padding: 30,
     borderRadius: 6,
     display: 'flex',
     alignItems: 'center',
@@ -24,8 +26,7 @@ const styles = StyleSheet.create({
     }
   },
   question: {
-    textAlign: 'center',
-    fontWeight: 'bold'
+    textAlign: 'center'
   }
 })
 class SurveyIndexItem extends React.Component {

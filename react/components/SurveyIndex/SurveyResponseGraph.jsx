@@ -4,17 +4,15 @@ import { StyleSheet, css } from 'aphrodite';
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
     width: '90%'
   },
   yesBar: {
     height: 10,
-    backgroundColor: '#4A572C'
+    backgroundColor: 'rgba(76, 217, 100, 1)'
   },
   noBar: {
     height: 10,
-    backgroundColor: '#E34819'
+    backgroundColor: 'rgba(255, 59, 48, 1)'
   }
 })
 
@@ -32,15 +30,29 @@ class SurveyResponseGraph extends React.Component {
     this.adjustBars();
   }
 
+  componentDidUpdate() {
+    const { yesCount, noCount } = this.props;
+    const { pastTotal } = this.state;
+    if (yesCount + noCount !== pastTotal) {
+      this.adjustBars()
+    }
+  }
+
   adjustBars() {
     const { yesCount, noCount, pastTotal } = this.props;
     const currentTotal = yesCount + noCount;
 
-    if (!currentTotal || currentTotal === pastTotal) {
+    if (!currentTotal) {
       return;
     }
-    const yesPercent = Math.floor((yesCount / currentTotal) * 100);
-    const noPercent = Math.floor((noCount / currentTotal) * 100);
+
+    let yesPercent = Math.floor((yesCount / currentTotal) * 100);
+    let noPercent = Math.floor((noCount / currentTotal) * 100);
+
+    // keeps the bar stable
+    if (yesPercent + noPercent < 100) {
+      yesPercent++;
+    }
 
     this.setState({ yesPercent, noPercent, pastTotal: currentTotal })
   }

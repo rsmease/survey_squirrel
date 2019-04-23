@@ -15,5 +15,18 @@
  @import 'bootstrap';
 
  html, body {
-   background-color: #B0703C
+   background-color: #fafafa;
+ }
+
+ .logo_container {
+   padding-top: 30px;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+ }
+
+ .logo {
+   height: 50px;
+   width: 50px;
+   margin: auto;
  }
