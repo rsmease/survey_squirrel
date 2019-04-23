@@ -48,7 +48,7 @@ class SurveyIndexItem extends React.Component {
 
     return (
       <React.Fragment>
-        <Col xs='12' md='3' className={css(styles.column)} onClick={this.toggle}>
+        <Col xs='12' lg='3' className={css(styles.column)} onClick={this.toggle}>
           <p className={css(styles.question)}>{survey.question}</p>
           <SurveyResponseGraph yesCount={survey.yes_count} noCount={survey.no_count} />
         </Col>
