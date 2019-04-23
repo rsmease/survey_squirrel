@@ -8,6 +8,7 @@ import SurveyResponseGraph from './SurveyResponseGraph';
 const styles = StyleSheet.create({
   column: {
     minHeight: 200,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     margin: 20,
     padding: 30,
     borderRadius: 6,
