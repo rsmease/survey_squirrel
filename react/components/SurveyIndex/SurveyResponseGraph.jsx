@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
   },
   yesBar: {
     height: 10,
-    backgroundColor: '#4A572C'
+    backgroundColor: 'rgba(76, 217, 100, 1)'
   },
   noBar: {
     height: 10,
-    backgroundColor: '#E34819'
+    backgroundColor: 'rgba(255, 59, 48, 1)'
   }
 })
 

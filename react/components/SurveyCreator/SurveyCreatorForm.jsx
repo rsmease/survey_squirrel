@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     borderBottom: 'none'
   },
   title: {
-    marginTop: 18
+    marginTop: 18,
+    marginLeft: 10
   },
   modalFooter: {
     borderTop: 'none',
@@ -30,13 +31,14 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     transition: 'all .2s',
     ':focus': {
-      borderColor: '#C2C290',
+      borderColor: 'rgba(0, 122, 255, 1)',
       outline: 'none'
     }
   },
   button: {
-    backgroundColor: '#4A572C',
-    borderColor: '#4A572C',
+    backgroundColor: 'rgba(0, 122, 255, 1)',
+    borderColor: 'rgba(0, 122, 255, 1)',
+    color: 'rgba(255, 255, 255, 1)',
     borderRadius: 22,
     padding: '10px 30px'
   }
