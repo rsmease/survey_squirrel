@@ -26,6 +26,7 @@ Survey Squirrel is a survey tool used to generate simple, single-question survey
 
 ```
 bundle install
+rails db:setup
 rails db:seed
 rails s
 webpack --watch
