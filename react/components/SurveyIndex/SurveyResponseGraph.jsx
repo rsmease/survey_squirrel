@@ -4,8 +4,6 @@ import { StyleSheet, css } from 'aphrodite';
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
     width: '90%'
   },
   yesBar: {
@@ -48,8 +46,13 @@ class SurveyResponseGraph extends React.Component {
       return;
     }
 
-    const yesPercent = Math.floor((yesCount / currentTotal) * 100);
-    const noPercent = Math.floor((noCount / currentTotal) * 100);
+    let yesPercent = Math.floor((yesCount / currentTotal) * 100);
+    let noPercent = Math.floor((noCount / currentTotal) * 100);
+
+    // keeps the bar stable
+    if (yesPercent + noPercent < 100) {
+      yesPercent++;
+    }
 
     this.setState({ yesPercent, noPercent, pastTotal: currentTotal })
   }
